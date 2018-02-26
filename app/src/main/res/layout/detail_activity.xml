@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/detail_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/movie_title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:gravity="center"
+            android:padding="@dimen/detail_title_texview_padding"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/detail_title_text_size"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Movie title" />
+
+        <LinearLayout
+            android:id="@+id/detail_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movie_title_text">
+
+            <ImageView
+                android:id="@+id/movie_poster_image"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/detail_poster_height"
+                android:layout_weight="0.6"
+                tools:src="@drawable/no_image_svg" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.4"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/favorites_star_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:src="@drawable/ic_star_border_black_48dp"
+                    android:background="#ffffff"
+                    android:padding="15dp"/>
+
+                <TextView
+                    style="@style/AdditionalTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/release_date" />
+
+                <TextView
+                    android:id="@+id/movie_release_date_text"
+                    style="@style/AdditionalTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="2018" />
+
+                <TextView
+                    style="@style/AdditionalTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/score" />
+
+                <TextView
+                    android:id="@+id/movie_rating_text"
+                    style="@style/AdditionalTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="10/10" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/movie_plot_overview_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/detail_overview_padding"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/detail_overview_text_size"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_linear_layout"
+            tools:text="An inspiring story about a unicorn who wants to become a lawyer" />
+        <LinearLayout
+            android:padding="@dimen/detail_overview_padding"
+            android:id="@+id/review_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movie_plot_overview_text">
+            <TextView
+                android:id="@+id/review_title_textview"
+                android:text="REVIEWS"
+                android:textSize="@dimen/detail_info_text_size"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ProgressBar
+                android:id="@+id/review_loading_indicator"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="@dimen/detail_overview_padding"
+            android:id="@+id/video_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/review_linear_layout">
+            <TextView
+                android:id="@+id/video_title_textview"
+                android:text="VIDEOS"
+                android:textSize="@dimen/detail_info_text_size"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ProgressBar
+                android:id="@+id/video_loading_indicator"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--arrays for sort order preferences-->
+    <array name="pref_sort_option_labels">
+        <item>@string/pref_sort_label_by_popularity</item>
+        <item>@string/pref_sort_label_by_rating</item>
+        <item>@string/pref_sort_label_favorites</item>
+    </array>
+    <array name="pref_sort_option_values">
+        <item>@string/pref_by_popularity_value</item>
+        <item>@string/pref_by_rating_value</item>
+        <item>@string/pref_by_favorites_value</item>
+    </array>
+    <!--arrays for refresh rate preferences-->
+    <array name="refresh_rate_option_labels">
+        <item>@string/pref_refresh_label_always</item>
+        <item>@string/pref_refresh_label_1hour</item>
+        <item>@string/pref_refresh_label_12hours</item>
+        <item>@string/pref_refresh_label_1day</item>
+        <item>@string/pref_refresh_label_1week</item>
+    </array>
+    <array name="refresh_rate_option_values">
+        <item>@string/pref_refresh_value_always</item>
+        <item>@string/pref_refresh_value_1hour</item>
+        <item>@string/pref_refresh_value_12hours</item>
+        <item>@string/pref_refresh_value_1day</item>
+        <item>@string/pref_refresh_value_1week</item>
+    </array>
+</resources>

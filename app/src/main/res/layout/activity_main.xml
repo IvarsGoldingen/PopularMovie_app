@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/no_movies_available_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/no_movies_available"
+        android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/error_message_text_size"
+        android:visibility="gone" />
+
+
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/button_previous"
+            android:background="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_black_48dp"
+            android:padding="0dp"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp">
+            <TextView
+                android:id="@+id/current_page_number_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/page_number_padding"
+                android:paddingRight="@dimen/page_number_padding"
+                android:text="@string/default_page_number"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/page_number_text_size"
+                android:layout_centerInParent="true"
+                android:textStyle="bold" />
+            <ProgressBar
+                android:id="@+id/loading_indicator"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
+        </RelativeLayout>
+        <ImageButton
+            android:id="@+id/button_next"
+            android:background="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_forward_black_48dp"
+            android:padding="0dp"/>
+    </LinearLayout>
+
+    <GridView xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/movie_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/buttons_layout"
+        android:background="@color/colorPrimaryLight"
+        android:clickable="true"
+        android:drawSelectorOnTop="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:horizontalSpacing="@dimen/gridview_spacing"
+        android:numColumns="2"
+        android:padding="@dimen/gridview_padding"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="@dimen/gridview_spacing"
+        tools:context="com.example.android.popularmoviesstage1.MainActivity"></GridView>
+</RelativeLayout>
